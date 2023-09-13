@@ -1,1 +1,17 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+.card {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Aggiungi uno spazio inferiore tra le card */
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+/* Personalizza il container principale delle card */
+.card-container {
+    margin-left: 10%;
+    margin-right: 10%;
+}
