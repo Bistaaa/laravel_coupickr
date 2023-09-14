@@ -27,6 +27,22 @@ Route::get('/category/{id}', [DashboardController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('category.show');
 
+Route::get('/categories/{id}/manage', [DashboardController::class, 'editCategories'])
+    ->middleware(['auth', 'verified'])
+    ->name('categories.edit');
+
+
+
+
+/////////////////////////
+//CRUD CATEGORIE
+/////////////////////////
+
+Route::put('/categories/{id}/update', [DashboardController::class, 'updateCategories'])
+    ->middleware(['auth', 'verified'])
+    ->name('categories.update');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
