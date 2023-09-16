@@ -13,6 +13,7 @@ return new class extends Migration
 
             $table->string('name', 64);
             $table->string('img', 255);
+            $table->boolean('is_hidden')->default(false);
 
             $table->timestamps();
         });

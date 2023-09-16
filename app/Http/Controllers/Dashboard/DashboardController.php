@@ -34,6 +34,18 @@ class DashboardController extends Controller
         return view('category-edit', compact('category', 'categories'));
     }
 
+    public function toggleVisibility($id)
+    {
+        $category = Category::findOrFail($id);
+
+        // Cambia lo stato di 'is_hidden' e salva.
+        $category->is_hidden = !$category->is_hidden;
+        $category->save();
+
+        return redirect()->route('dashboard.home')->with('success', 'Visibilità della categoria aggiornata con successo!');
+    }
+
+
 
 
 

@@ -31,6 +31,9 @@ Route::get('/categories/{id}/manage', [DashboardController::class, 'editCategori
     ->middleware(['auth', 'verified'])
     ->name('categories.edit');
 
+Route::post('/categories/{id}/toggle-visibility', [DashboardController::class, 'toggleVisibility'])
+    ->middleware(['auth', 'verified'])
+    ->name('categories.toggleVisibility');
 
 
 

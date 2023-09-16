@@ -12,6 +12,7 @@ class Category extends Model
     protected $fillable = [
         'name',
         'img',
+        'is_hidden'
     ];
 
     public function stores() {

@@ -16,7 +16,14 @@
                         <div class="buttons-container">
                             <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary">Modifica
                                 Categoria</a>
-                            {{-- <a href="{{ route('') }}" class="btn btn-primary">Elimina Categoria</a> --}}
+                            <form action="{{ route('categories.toggleVisibility', $category->id) }}" method="post">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="is_hidden_{{ $category->id }}">Nascondi Categoria</label>
+                                    <input type="checkbox" id="is_hidden_{{ $category->id }}" name="is_hidden"
+                                        {{ $category->is_hidden ? 'checked' : '' }} onchange="this.form.submit()">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
