@@ -55,6 +55,10 @@ Route::get('/dashboard/category-create', [DashboardController::class, 'createCat
     ->middleware(['auth'])
     ->name('category.create');
 
+Route::delete('/category/{id}/delete', [DashboardController::class, 'deleteCategory'])
+    ->middleware(['auth', 'verified'])
+    ->name('category.delete');
+
 
 
 Route::middleware('auth')->group(function () {

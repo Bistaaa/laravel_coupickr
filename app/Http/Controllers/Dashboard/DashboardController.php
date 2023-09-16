@@ -107,4 +107,13 @@ class DashboardController extends Controller
 
         return view('dashboard.section.category-create', compact('category'));
     }
+
+    public function deleteCategory($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
+
+        return redirect()->route('dashboard.home')->with('success', 'Categoria eliminata con successo!');
+    }
+
 }

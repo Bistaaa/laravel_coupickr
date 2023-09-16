@@ -32,6 +32,11 @@
                                 </div>
                             </form>
                         </div>
+                        <form action="{{ route('category.delete', $category->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Elimina Categoria</button>
+                        </form>
                     </div>
                 </div>
             </div>
