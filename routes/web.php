@@ -27,13 +27,19 @@ Route::get('/category/{id}', [DashboardController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('category.show');
 
-Route::get('/categories/{id}/manage', [DashboardController::class, 'editCategories'])
-    ->middleware(['auth', 'verified'])
-    ->name('categories.edit');
 
-Route::post('/categories/{id}/toggle-visibility', [DashboardController::class, 'toggleVisibility'])
+Route::post('/category/dish-store', [DashboardController::class, 'storeCategory'])
+    ->middleware(['auth'])
+    ->name('category.store');
+
+Route::get('/category/{id}/manage', [DashboardController::class, 'editCategory'])
     ->middleware(['auth', 'verified'])
-    ->name('categories.toggleVisibility');
+    ->name('category.edit');
+
+Route::post('/category/{id}/toggle-visibility', [DashboardController::class, 'toggleVisibility'])
+    ->middleware(['auth', 'verified'])
+    ->name('category.toggleVisibility');
+
 
 
 
@@ -41,9 +47,13 @@ Route::post('/categories/{id}/toggle-visibility', [DashboardController::class, '
 //CRUD CATEGORIE
 /////////////////////////
 
-Route::put('/categories/{id}/update', [DashboardController::class, 'updateCategories'])
+Route::put('/category/{id}/update', [DashboardController::class, 'updateCategory'])
     ->middleware(['auth', 'verified'])
-    ->name('categories.update');
+    ->name('category.update');
+
+Route::get('/dashboard/category-create', [DashboardController::class, 'createCategory'])
+    ->middleware(['auth'])
+    ->name('category.create');
 
 
 

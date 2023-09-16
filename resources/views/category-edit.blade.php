@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-6">
                 <!-- Form per la modifica delle categorie -->
-                <form method="POST" action="{{ route('categories.update', $category->id) }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('category.update', $category->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 

@@ -22,11 +22,13 @@ class DashboardController extends Controller
     public function show($id)
     {
         $category = Category::find($id);
+        $categories = Category::all(); // Aggiungi questa riga per ottenere tutte le categorie
 
-        return view('dashboard.category.show', compact('category'));
+        return view('dashboard.dashboard', compact('category', 'categories'));
     }
 
-    public function editCategories($id)
+
+    public function editCategory($id)
     {
         $category = Category::findOrFail($id);
         $categories = Category::all();
@@ -45,6 +47,32 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.home')->with('success', 'Visibilità della categoria aggiornata con successo!');
     }
 
+    public function storeCategory(Request $request)
+    {
+        // Metodo per salvare una nuova categoria nel database
+        $data = $request->validate([
+            'name' => 'required|string|max:64',
+            'img' => 'sometimes|image|max:5000', // validazione come immagine con un max di 5MB, "sometimes" significa che non è sempre richiesto
+            'visibility' => 'required|boolean'
+        ]);
+
+        // Controlla se c'è un'immagine e salvala nella cartella "uploads"
+        if (array_key_exists('img', $data) && $data['img'] !== null) {
+            $data['img'] = Storage::put('uploads', $data['img']);
+        } else {
+            $data['img'] = null;
+        }
+
+        // Converti il valore "visibility" in "is_hidden"
+        $data['is_hidden'] = !$request->input('visibility');
+
+        // Crea una nuova categoria con i dati validati
+        $category = Category::create($data);
+
+        return redirect()->route('category.show', $category->id);
+    }
+
+
 
 
 
@@ -53,7 +81,7 @@ class DashboardController extends Controller
     //CRUD CATEGORIE
     /////////////////////////
 
-    public function updateCategories(Request $request, $id)
+    public function updateCategory(Request $request, $id)
     {
 
         // Metodo per aggiornare i dati di un piatto esistente
@@ -68,7 +96,15 @@ class DashboardController extends Controller
 
         $category->update($data);
 
-        return redirect()->route('categories.edit', $category->id);
+        return redirect()->route('category.edit', $category->id);
 
+    }
+
+    public function createCategory()
+    {
+        // Metodo per visualizzare il formulario di creazione dei piatti
+        $category = Category::all();
+
+        return view('dashboard.section.category-create', compact('category'));
     }
 }
