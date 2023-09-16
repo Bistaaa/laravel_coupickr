@@ -18,7 +18,7 @@
                         <a href="{{ route('category.show', $category->id) }}" class="btn btn-primary mb-2">Vai a
                             {{ $category->name }}</a>
 
-                        <div class="d-flex justify-content-between align-items-center mt-3">
+                        <div class="d-flex justify-content-evenly align-items-center mt-3">
                             <a href="{{ route('category.edit', $category->id) }}" class="btn btn-warning">Modifica
                                 Categoria</a>
 
@@ -32,7 +32,8 @@
                                 </div>
                             </form>
                         </div>
-                        <form action="{{ route('category.delete', $category->id) }}" method="post">
+                        <form id="delete-category-button" action="{{ route('category.delete', $category->id) }}"
+                            method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Elimina Categoria</button>
@@ -44,7 +45,7 @@
     </div>
 
     <div class="d-flex justify-content-center align-items-center">
-        <a href="{{ route('category.create') }}" class="btn btn-warning">
+        <a id="add-category-button" href="{{ route('category.create') }}" class="btn btn-warning">
             Aggiungi Categoria
         </a>
     </div>
