@@ -77,6 +77,20 @@ class DashboardController extends Controller
 
 
 
+
+
+
+    public function showStores($id)
+    {
+        $stores = Store::where('category_id', $id)->get();
+
+        return view('dashboard.section.store-show', compact('stores'));
+    }
+
+
+
+
+
     /////////////////////////
     //CRUD CATEGORIE
     /////////////////////////

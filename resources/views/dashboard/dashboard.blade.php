@@ -15,7 +15,7 @@
                     @endif
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ $category->name }}</h5>
-                        <a href="{{ route('category.show', $category->id) }}" class="btn btn-primary mb-2">Vai a
+                        <a href="{{ route('store.show', ['id' => $category->id]) }}" class="btn btn-primary mb-2">Vai a
                             {{ $category->name }}</a>
 
                         <div class="d-flex justify-content-evenly align-items-center mt-3">

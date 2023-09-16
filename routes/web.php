@@ -27,7 +27,6 @@ Route::get('/category/{id}', [DashboardController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('category.show');
 
-
 Route::post('/category/dish-store', [DashboardController::class, 'storeCategory'])
     ->middleware(['auth'])
     ->name('category.store');
@@ -39,6 +38,12 @@ Route::get('/category/{id}/manage', [DashboardController::class, 'editCategory']
 Route::post('/category/{id}/toggle-visibility', [DashboardController::class, 'toggleVisibility'])
     ->middleware(['auth', 'verified'])
     ->name('category.toggleVisibility');
+
+
+
+Route::get('/category/store-show/{id}', [DashboardController::class, 'showStores'])
+    ->middleware(['auth', 'verified'])
+    ->name('store.show');
 
 
 
