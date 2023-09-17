@@ -146,7 +146,7 @@ class DashboardController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
 
-        return redirect()->route('dashboard.home')->with('success', 'Categoria eliminata con successo!');
+        return redirect()->route('store.show');
     }
 
 
@@ -180,4 +180,13 @@ class DashboardController extends Controller
         // Reindirizza alla pagina di modifica dello store con un messaggio di successo
         return redirect()->route('store.edit', ['category_id' => $store->category_id, 'store_id' => $store->id]);
     }
+
+    public function deleteStore($id)
+    {
+        $store = Store::findOrFail($id);
+        $store->delete();
+
+        return redirect()->back();
+    }
+
 }

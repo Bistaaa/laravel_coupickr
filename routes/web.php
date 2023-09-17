@@ -83,6 +83,11 @@ Route::put('/store/{id}/update', [DashboardController::class, 'updateStore'])
 
 
 
+Route::delete('/store/{id}/delete', [DashboardController::class, 'deleteStore'])
+    ->middleware(['auth', 'verified'])
+    ->name('store.delete');
+
+
 
 
 

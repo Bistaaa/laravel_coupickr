@@ -44,12 +44,11 @@
                             </form>
                         </div>
 
-                        {{-- <form id="delete-category-button" action="{{ route('category.delete', $category->id) }}"
-                            method="post">
+                        <form id="delete-store-button" action="{{ route('store.delete', $store->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Elimina Categoria</button>
-                        </form> --}}
+                            <button type="submit" class="btn btn-danger">Elimina Negozio</button>
+                        </form>
                     </div>
                 </div>
             </div>
