@@ -106,6 +106,40 @@ class DashboardController extends Controller
         return redirect()->back()->with('success', 'Visibility toggled successfully!');
     }
 
+    public function storeStore(Request $request, $category_id)
+    {
+        $data = $request->validate([
+            'store_name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'link' => 'required|url|max:255',
+            'logo' => 'nullable|image',
+            'affiliation_code' => 'nullable|string|max:255',
+            'discount' => 'required|numeric',
+            'commission' => 'required|numeric',
+            'is_hidden' => 'sometimes|boolean'
+        ]);
+
+        /* if (array_key_exists('img', $data) && $data['img'] !== null) {
+            $data['img'] = Storage::put('uploads', $data['img']);
+        } else {
+            $data['img'] = null;
+        } */
+
+        // Converti il valore "visibility" in "is_hidden"
+        $data['is_hidden'] = $request->input('visibility') ? false : true;
+
+        // Aggiungi il category_id al tuo array di dati
+        $data['category_id'] = $category_id;
+
+        // Crea un nuovo negozio con i dati validati
+        $store = Store::create($data);
+
+        // Reindirizza alla pagina appropriata con un messaggio di successo
+        return redirect()->route('store.show', ['id' => $store->id]);
+    }
+
+
+
 
 
 
@@ -180,6 +214,14 @@ class DashboardController extends Controller
         // Reindirizza alla pagina di modifica dello store con un messaggio di successo
         return redirect()->route('store.edit', ['category_id' => $store->category_id, 'store_id' => $store->id]);
     }
+
+    public function createStore(Request $request, $category_id)
+    {
+        return view('dashboard.section.store-create', compact('category_id'));
+    }
+
+
+
 
     public function deleteStore($id)
     {

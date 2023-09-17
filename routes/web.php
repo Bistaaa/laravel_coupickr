@@ -45,6 +45,10 @@ Route::get('/category/store-show/{id}', [DashboardController::class, 'showStores
     ->middleware(['auth', 'verified'])
     ->name('store.show');
 
+Route::post('/category/{category_id}/store/dish-store', [DashboardController::class, 'storeStore'])
+    ->middleware(['auth'])
+    ->name('store.store');
+
 Route::get('/category/{category_id}/store/{store_id}/manage', [DashboardController::class, 'editStore'])
     ->middleware(['auth', 'verified'])
     ->name('store.edit');
@@ -81,7 +85,9 @@ Route::put('/store/{id}/update', [DashboardController::class, 'updateStore'])
     ->middleware(['auth', 'verified'])
     ->name('store.update');
 
-
+Route::get('/dashboard/category/{category_id}/store-create', [DashboardController::class, 'createStore'])
+    ->middleware(['auth'])
+    ->name('store.create');
 
 Route::delete('/store/{id}/delete', [DashboardController::class, 'deleteStore'])
     ->middleware(['auth', 'verified'])

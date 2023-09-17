@@ -54,4 +54,9 @@
             </div>
         @endforeach
     </div>
+
+    <div class="d-flex justify-content-center align-items-center">
+        <a id="add-shop-button" href="{{ route('store.create', ['category_id' => $store->category_id]) }}"
+            class="btn btn-warning">Aggiungi Negozio</a>
+    </div>
 @endsection
