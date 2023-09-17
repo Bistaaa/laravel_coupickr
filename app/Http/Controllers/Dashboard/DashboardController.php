@@ -87,6 +87,15 @@ class DashboardController extends Controller
         return view('dashboard.section.store-show', compact('stores'));
     }
 
+    public function editStore($category_id, $store_id)
+    {
+        $store = Store::findOrFail($store_id);
+        $stores = Store::all();
+
+        return view('dashboard.section.store-edit', compact('store', 'stores'));
+    }
+
+
 
 
 
@@ -98,7 +107,6 @@ class DashboardController extends Controller
     public function updateCategory(Request $request, $id)
     {
 
-        // Metodo per aggiornare i dati di un piatto esistente
         $data = $request->validate(
             [
             'name' => 'required|string|max:64',
@@ -130,4 +138,35 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.home')->with('success', 'Categoria eliminata con successo!');
     }
 
+
+
+
+
+
+
+
+    public function updateStore(Request $request, $id)
+    {
+        // Valida i dati inviati nel form
+        $data = $request->validate([
+            'store_name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'link' => 'required|url|max:255',
+            'category_id' => 'required|integer|exists:categories,id', // assicuriamoci che category_id esista nella tabella delle categorie
+            'logo' => 'nullable|string|max:255', // o 'image' se carichi un file immagine
+            'affiliation_code' => 'nullable|string|max:255',
+            'discount' => 'required|numeric',
+            'commission' => 'required|numeric'
+        ]);
+
+        // Trova lo store nel database o ritorna un errore 404 se non trovato
+        $store = Store::findOrFail($id);
+
+        // Aggiorna lo store con i dati validati
+        $store->update($data);
+
+
+        // Reindirizza alla pagina di modifica dello store con un messaggio di successo
+        return redirect()->route('store.edit', ['category_id' => $store->category_id, 'store_id' => $store->id]);
+    }
 }
