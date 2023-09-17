@@ -112,12 +112,14 @@ class DashboardController extends Controller
             'store_name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'link' => 'required|url|max:255',
+            'category_id' => 'required|integer|exists:categories,id',
             'logo' => 'nullable|image',
             'affiliation_code' => 'nullable|string|max:255',
             'discount' => 'required|numeric',
             'commission' => 'required|numeric',
-            'is_hidden' => 'sometimes|boolean'
+            'is_hidden' => 'nullable|boolean'
         ]);
+
 
         /* if (array_key_exists('img', $data) && $data['img'] !== null) {
             $data['img'] = Storage::put('uploads', $data['img']);
@@ -125,18 +127,20 @@ class DashboardController extends Controller
             $data['img'] = null;
         } */
 
-        // Converti il valore "visibility" in "is_hidden"
-        $data['is_hidden'] = $request->input('visibility') ? false : true;
-
-        // Aggiungi il category_id al tuo array di dati
-        $data['category_id'] = $category_id;
+        // Se la chiave "visibility" esiste e il suo valore è true o "on",
+        // imposta "is_hidden" a false, altrimenti imposta "is_hidden" a true.
+        $data['is_hidden'] = $request->input('visibility') === true || $request->input('visibility') === 'on' ? false : true;
 
         // Crea un nuovo negozio con i dati validati
         $store = Store::create($data);
 
+        // Recupera l'ID della categoria dal negozio appena creato
+        $category_id = $store->category_id;
+
         // Reindirizza alla pagina appropriata con un messaggio di successo
-        return redirect()->route('store.show', ['id' => $store->id]);
+        return redirect()->route('store.show', ['id' => $category_id]);
     }
+
 
 
 
