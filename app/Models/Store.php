@@ -18,6 +18,7 @@ class Store extends Model
         'affiliation_code',
         'discount',
         'commission',
+        'is_hidden'
     ];
 
     public function category() {

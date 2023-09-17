@@ -96,6 +96,15 @@ class DashboardController extends Controller
         return view('dashboard.section.store-edit', compact('store', 'stores', 'category'));
     }
 
+    public function toggleVisibilityStore(Request $request, $category_id, $store_id)
+    {
+        $store = Store::findOrFail($store_id);
+
+        $store->is_hidden = !$store->is_hidden;
+        $store->save();
+
+        return redirect()->back()->with('success', 'Visibility toggled successfully!');
+    }
 
 
 

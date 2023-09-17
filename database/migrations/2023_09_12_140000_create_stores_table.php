@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('affiliation_code', 64);
             $table->decimal('discount', 5, 2);
             $table->decimal('commission', 5, 2);
+            $table->boolean('is_hidden')->default(false);
 
             $table->timestamps();
         });

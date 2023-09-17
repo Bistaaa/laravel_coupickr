@@ -21,8 +21,6 @@
                         <p>Codice di affiliazione: {{ $store->affiliation_code }}</p>
                         <p>Sconto: {{ $store->discount }}%</p>
                         <p>Commissione: {{ $store->commission }}%</p>
-
-                        <!-- Aggiungi qui i bottoni per le azioni sul negozio, come modificare o eliminare -->
                     </div>
 
                     {{-- BUTTONS --}}
@@ -32,15 +30,18 @@
                             <a href="{{ route('store.edit', ['category_id' => $store->category_id, 'store_id' => $store->id]) }}"
                                 class="btn btn-warning">Modifica Negozio</a>
 
-                            {{-- <form action="{{ route('category.toggleVisibility', $category->id) }}" method="post">
+                            <form
+                                action="{{ route('store.toggleVisibility', ['category_id' => $store->category_id, 'store_id' => $store->id]) }}"
+                                method="post">
                                 @csrf
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="is_hidden_{{ $category->id }}"
-                                        name="is_hidden" {{ $category->is_hidden ? 'checked' : '' }}
+                                    <input class="form-check-input" type="checkbox" id="is_hidden_{{ $store->id }}"
+                                        name="is_hidden" {{ $store->is_hidden ? 'checked' : '' }}
                                         onchange="this.form.submit()">
-                                    <label class="form-check-label" for="is_hidden_{{ $category->id }}">Nascondi</label>
+                                    <label class="form-check-label" for="is_hidden_{{ $store->id }}">Nascondi
+                                        Negozio</label>
                                 </div>
-                            </form> --}}
+                            </form>
                         </div>
 
                         {{-- <form id="delete-category-button" action="{{ route('category.delete', $category->id) }}"

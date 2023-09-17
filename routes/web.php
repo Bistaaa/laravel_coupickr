@@ -49,6 +49,11 @@ Route::get('/category/{category_id}/store/{store_id}/manage', [DashboardControll
     ->middleware(['auth', 'verified'])
     ->name('store.edit');
 
+Route::post('/category/{category_id}/store/{store_id}/toggle-visibility', [DashboardController::class, 'toggleVisibilityStore'])
+    ->middleware(['auth', 'verified'])
+    ->name('store.toggleVisibility');
+
+
 
 
 
