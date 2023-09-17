@@ -74,6 +74,6 @@
                 </ul>
             </div>
         </div>
-        {{-- <a href="{{ route('store.show', $category->id) }}" class="btn btn-warning">Torna alla lista dei negozi</a> --}}
+        <a href="{{ route('store.show', $category->id) }}" class="btn btn-warning">Torna alla lista dei negozi</a>
     </div>
 @endsection

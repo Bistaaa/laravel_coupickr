@@ -90,10 +90,12 @@ class DashboardController extends Controller
     public function editStore($category_id, $store_id)
     {
         $store = Store::findOrFail($store_id);
+        $category = Category::findOrFail($category_id);  // Recupera la categoria dal database
         $stores = Store::all();
 
-        return view('dashboard.section.store-edit', compact('store', 'stores'));
+        return view('dashboard.section.store-edit', compact('store', 'stores', 'category'));
     }
+
 
 
 
