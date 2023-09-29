@@ -8,7 +8,7 @@ use App\Models\Category;
 
 class ApiController extends Controller
 {
-    public function categoriesLyst()
+    public function categoriesList()
     {
         $categories = Category::all();
 
