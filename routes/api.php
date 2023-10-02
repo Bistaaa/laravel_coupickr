@@ -8,6 +8,10 @@ use App\Http\Controllers\Api\ApiController;
 Route::prefix('/v1')->group(function () {
 
     Route::get('/home', [ApiController::class, 'categoriesList']);
+
+    /* Route::get('/stores', [ApiController::class, 'storesList']); */
+
+    Route::get('/home/{id}/stores', [ApiController::class, 'storesList']);
 });
 
 

@@ -113,33 +113,29 @@ class DashboardController extends Controller
             'description' => 'nullable|string',
             'link' => 'required|url|max:255',
             'category_id' => 'required|integer|exists:categories,id',
-            'logo' => 'nullable|image',
+            'logo' => 'nullable|image', // Aggiorna la validazione per accettare solo immagini
             'affiliation_code' => 'nullable|string|max:255',
             'discount' => 'required|numeric',
             'commission' => 'required|numeric',
             'is_hidden' => 'nullable|boolean'
         ]);
 
-
-        /* if (array_key_exists('img', $data) && $data['img'] !== null) {
-            $data['img'] = Storage::put('uploads', $data['img']);
+        // Verifica se è stata caricata un'immagine
+        if ($request->hasFile('logo')) {
+            // Salva l'immagine nella cartella 'uploads' e ottieni il nome del file
+            $logoPath = $request->file('logo')->store('uploads');
+            $data['logo'] = $logoPath;
         } else {
-            $data['img'] = null;
-        } */
-
-        // Se la chiave "visibility" esiste e il suo valore è true o "on",
-        // imposta "is_hidden" a false, altrimenti imposta "is_hidden" a true.
-        $data['is_hidden'] = $request->input('visibility') === true || $request->input('visibility') === 'on' ? false : true;
+            $data['logo'] = null;
+        }
 
         // Crea un nuovo negozio con i dati validati
         $store = Store::create($data);
 
-        // Recupera l'ID della categoria dal negozio appena creato
-        $category_id = $store->category_id;
-
         // Reindirizza alla pagina appropriata con un messaggio di successo
         return redirect()->route('store.show', ['id' => $category_id]);
     }
+
 
 
 
@@ -158,8 +154,8 @@ class DashboardController extends Controller
 
         $data = $request->validate(
             [
-            'name' => 'required|string|max:64',
-            /* 'img' => 'required|string|max:255', */
+                'name' => 'required|string|max:64',
+                /* 'img' => 'required|string|max:255', */
             ]
         );
 
@@ -168,7 +164,6 @@ class DashboardController extends Controller
         $category->update($data);
 
         return redirect()->route('category.edit', $category->id);
-
     }
 
     public function createCategory()
@@ -184,7 +179,7 @@ class DashboardController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
 
-        return redirect()->route('store.show');
+        return redirect()->route('dashboard.home');
     }
 
 
@@ -234,5 +229,4 @@ class DashboardController extends Controller
 
         return redirect()->back();
     }
-
 }
