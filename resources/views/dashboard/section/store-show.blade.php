@@ -8,10 +8,10 @@
             <div class="col-md-4 mb-4">
                 <div class="card">
                     @if (Str::startsWith($store->logo, 'uploads/'))
-                        <img src="{{ asset('storage/' . $store->logo) }}" class="card-img-top" alt="{{ $store->store_name }}">
+                        <img src="{{ asset('storage/' . $store->logo) }}" class="card-img-top" alt="{{ $store->logo }}">
                     @else
                         <img src="{{ asset('storage/images/' . $store->logo) }}" class="card-img-top"
-                            alt="{{ $store->store_name }}">
+                            alt="{{ $store->logo }}">
                     @endif
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ $store->store_name }}</h5>

@@ -196,12 +196,20 @@ class DashboardController extends Controller
             'store_name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'link' => 'required|url|max:255',
-            'category_id' => 'required|integer|exists:categories,id', // assicuriamoci che category_id esista nella tabella delle categorie
-            'logo' => 'nullable|string|max:255', // o 'image' se carichi un file immagine
+            'category_id' => 'required|integer|exists:categories,id',
+            'logo' => 'nullable|image',
             'affiliation_code' => 'nullable|string|max:255',
             'discount' => 'required|numeric',
             'commission' => 'required|numeric'
         ]);
+
+        if ($request->hasFile('logo')) {
+            // Salva l'immagine nella cartella 'uploads' e ottieni il nome del file
+            $logoPath = $request->file('logo')->store('uploads');
+            $data['logo'] = $logoPath;
+        } else {
+            $data['logo'] = null;
+        }
 
         // Trova lo store nel database o ritorna un errore 404 se non trovato
         $store = Store::findOrFail($id);

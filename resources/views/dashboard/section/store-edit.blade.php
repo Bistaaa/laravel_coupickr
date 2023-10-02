@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-6">
                 <!-- Form per la modifica dello store -->
-                <form action="{{ route('store.update', $store->id) }}" method="post">
+                <form action="{{ route('store.update', $store->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -38,7 +38,7 @@
                     <!-- Campo per il logo dello store -->
                     <div class="form-group">
                         <label for="logo">Logo</label>
-                        <input type="text" name="logo" class="form-control" value="{{ $store->logo }}">
+                        <input type="file" name="logo" class="form-control" value="{{ $store->logo }}">
                     </div>
 
                     <!-- Campo per il codice di affiliazione -->
