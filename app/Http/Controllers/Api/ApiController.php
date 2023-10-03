@@ -27,4 +27,11 @@ class ApiController extends Controller
             'categorySelected' => $categorySelected,
         ]);
     }
+
+    public function getStoreById($id)
+    {
+        $StoreById = Store::findOrFail($id);
+
+        return response()->json(['StoreById' => $StoreById]);
+    }
 }
