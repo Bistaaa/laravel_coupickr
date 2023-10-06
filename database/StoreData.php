@@ -10,6 +10,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'ABC123',
         'discount' => 20,
+        'validity' => '2023-11-10',
         'commission' => 5,
     ],
     [
@@ -20,6 +21,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'XYZ789',
         'discount' => 15,
+        'validity' => '2023-11-10',
         'commission' => 4,
     ],
     [
@@ -30,6 +32,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => '123XYZ',
         'discount' => 10,
+        'validity' => '2023-11-10',
         'commission' => 3,
     ],
     [
@@ -40,6 +43,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'KID456',
         'discount' => 25,
+        'validity' => '2023-11-10',
         'commission' => 6,
     ],
     [
@@ -50,6 +54,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'CT789',
         'discount' => 18,
+        'validity' => '2023-11-10',
         'commission' => 4.5,
     ],
 
@@ -62,6 +67,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'HOME123',
         'discount' => 15,
+        'validity' => '2023-11-10',
         'commission' => 4,
     ],
     [
@@ -72,6 +78,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'GARDEN456',
         'discount' => 12,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -82,6 +89,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'FURNITURE789',
         'discount' => 20,
+        'validity' => '2023-11-10',
         'commission' => 5,
     ],
     [
@@ -92,6 +100,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'KITCHEN123',
         'discount' => 10,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -102,9 +111,10 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'OUTDOOR456',
         'discount' => 18,
+        'validity' => '2023-11-10',
         'commission' => 4,
     ],
-        // Elettronica e Tecnologia
+    // Elettronica e Tecnologia
     [
         'store_name' => 'TechGadgets',
         'description' => 'Tecnologia all\'avanguardia per gli amanti della tecnologia.',
@@ -113,6 +123,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'TECH123',
         'discount' => 15,
+        'validity' => '2023-11-10',
         'commission' => 4.5,
     ],
     [
@@ -123,6 +134,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'ELECTRO456',
         'discount' => 10,
+        'validity' => '2023-11-10',
         'commission' => 3,
     ],
     [
@@ -133,6 +145,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'MOBILE789',
         'discount' => 20,
+        'validity' => '2023-11-10',
         'commission' => 5,
     ],
     [
@@ -143,6 +156,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'GAMING123',
         'discount' => 12,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -153,6 +167,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'TECHSUP456',
         'discount' => 18,
+        'validity' => '2023-11-10',
         'commission' => 4,
     ],
 
@@ -165,6 +180,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'HEALTH123',
         'discount' => 20,
+        'validity' => '2023-11-10',
         'commission' => 6,
     ],
     [
@@ -175,6 +191,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'BEAUTY456',
         'discount' => 15,
+        'validity' => '2023-11-10',
         'commission' => 4.5,
     ],
     [
@@ -185,6 +202,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'FITNESS789',
         'discount' => 10,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -195,6 +213,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'WELLNESS123',
         'discount' => 25,
+        'validity' => '2023-11-10',
         'commission' => 6.5,
     ],
     [
@@ -205,6 +224,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'MEDIMART456',
         'discount' => 12,
+        'validity' => '2023-11-10',
         'commission' => 4,
     ],
     // Viaggi e Vacanze
@@ -216,6 +236,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'TRAVEL123',
         'discount' => 15,
+        'validity' => '2023-11-10',
         'commission' => 4.5,
     ],
     [
@@ -226,6 +247,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'ADVENTURE456',
         'discount' => 10,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -236,6 +258,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'CRUISE789',
         'discount' => 20,
+        'validity' => '2023-11-10',
         'commission' => 5,
     ],
     [
@@ -246,6 +269,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'BEACH123',
         'discount' => 12,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -256,6 +280,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'EXPLORE456',
         'discount' => 18,
+        'validity' => '2023-11-10',
         'commission' => 4,
     ],
 
@@ -268,6 +293,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'FOOD123',
         'discount' => 15,
+        'validity' => '2023-11-10',
         'commission' => 4.5,
     ],
     [
@@ -278,6 +304,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'WINE456',
         'discount' => 10,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -288,6 +315,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'COFFEE789',
         'discount' => 20,
+        'validity' => '2023-11-10',
         'commission' => 5,
     ],
     [
@@ -298,6 +326,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'GOURMET123',
         'discount' => 12,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -308,6 +337,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'HEALTHY456',
         'discount' => 18,
+        'validity' => '2023-11-10',
         'commission' => 4,
     ],
     // Sport
@@ -319,6 +349,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'SPORT123',
         'discount' => 15,
+        'validity' => '2023-11-10',
         'commission' => 4.5,
     ],
     [
@@ -329,6 +360,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'ATHLETE456',
         'discount' => 10,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -339,6 +371,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'OUTDOOR123',
         'discount' => 20,
+        'validity' => '2023-11-10',
         'commission' => 5,
     ],
     [
@@ -349,6 +382,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'TEAMSPORT456',
         'discount' => 12,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -359,6 +393,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'BIKE123',
         'discount' => 18,
+        'validity' => '2023-11-10',
         'commission' => 4,
     ],
 
@@ -371,6 +406,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'FIT123',
         'discount' => 15,
+        'validity' => '2023-11-10',
         'commission' => 4.5,
     ],
     [
@@ -381,6 +417,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'YOGA456',
         'discount' => 10,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -391,6 +428,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'GYM123',
         'discount' => 20,
+        'validity' => '2023-11-10',
         'commission' => 5,
     ],
     [
@@ -401,6 +439,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'FITFUEL456',
         'discount' => 12,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -411,6 +450,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'WORKOUT123',
         'discount' => 18,
+        'validity' => '2023-11-10',
         'commission' => 4,
     ],
     // Servizi
@@ -422,6 +462,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'BUSINESS123',
         'discount' => 10,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -432,6 +473,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'TRAVELBOOK456',
         'discount' => 15,
+        'validity' => '2023-11-10',
         'commission' => 4.5,
     ],
     [
@@ -442,6 +484,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'DESIGNSTUDIO789',
         'discount' => 20,
+        'validity' => '2023-11-10',
         'commission' => 5,
     ],
     [
@@ -452,6 +495,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'TECHSUPPORT123',
         'discount' => 12,
+        'validity' => '2023-11-10',
         'commission' => 3.5,
     ],
     [
@@ -462,6 +506,7 @@ $storesData = [
         'logo' => '1st-tab.jpg',
         'affiliation_code' => 'EVENT123',
         'discount' => 18,
+        'validity' => '2023-11-10',
         'commission' => 4,
     ],
 ];

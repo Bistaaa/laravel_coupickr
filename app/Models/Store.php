@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Store extends Model
 {
@@ -18,10 +19,22 @@ class Store extends Model
         'affiliation_code',
         'discount',
         'commission',
+        'validity',
         'is_hidden'
     ];
 
-    public function category() {
+    protected $dates = ['validity'];
+
+
+    public function getValidityAttribute($date)
+    {
+        return Carbon::parse($date)->format('d/m/Y');
+    }
+
+
+
+    public function category()
+    {
 
         return $this->belongsTo(Category::class);
     }
