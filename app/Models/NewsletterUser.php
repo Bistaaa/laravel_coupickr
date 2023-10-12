@@ -14,5 +14,6 @@ class NewsletterUser extends Model
         'surname',
         'email',
         'subscribed',
+        'unsubscribe_token',
     ];
 }

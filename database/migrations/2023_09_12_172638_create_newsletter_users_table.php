@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('surname', 64);
             $table->string('email', 64)->unique();
             $table->boolean('subscribed')->default(true);
+            $table->string('unsubscribe_token', 64)->unique()->nullable();  // Aggiungi questa riga
 
             $table->timestamps();
         });
