@@ -25,7 +25,7 @@
                     @foreach ($categories as $category)
                         <li>{{ $category->name }}</li>
                     @endforeach
-                </ul>
+                </ul>ç
             </div>
         </div>
     </div>
